@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Play_Music" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mg-uw-tPi">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="Cin-gg-Nxn">
+                                        <slider key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="dyY-ia-m60">
+                                            <rect key="frame" x="14" y="6.5" width="218" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="volumeChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="yzS-LU-95j"/>
+                                            </connections>
+                                        </slider>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="aIP-sf-LZU"/>
+                                    <barButtonItem title="Item" systemItem="pause" id="LhR-uO-0xi">
+                                        <connections>
+                                            <action selector="pauseButton:" destination="vXZ-lx-hvc" id="n8m-Mt-Svb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample.png" translatesAutoresizingMaskIntoConstraints="NO" id="wHC-Mr-C1X">
+                                <rect key="frame" x="0.0" y="119" width="385" height="464"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="464" id="b9F-si-uLB"/>
+                                    <constraint firstAttribute="width" constant="385" id="dbZ-C4-h4w"/>
+                                </constraints>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5yt-4Y-VUQ">
+                                <rect key="frame" x="-6" y="20" width="381" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="play" id="D4g-rs-Fht">
+                                        <connections>
+                                            <action selector="play:" destination="vXZ-lx-hvc" id="zjO-o8-WjM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="iwY-Eh-ntN"/>
+                                    <barButtonItem systemItem="stop" id="dM8-lV-Gk2">
+                                        <connections>
+                                            <action selector="stopButton:" destination="vXZ-lx-hvc" id="lY7-e5-P7f"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6mg-uw-tPi" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="1Ph-iG-Kom"/>
+                            <constraint firstAttribute="trailing" secondItem="6mg-uw-tPi" secondAttribute="trailing" id="5s3-tk-SgC"/>
+                            <constraint firstItem="6mg-uw-tPi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="7Q0-Te-r1y"/>
+                            <constraint firstItem="6mg-uw-tPi" firstAttribute="leading" secondItem="wHC-Mr-C1X" secondAttribute="leading" id="Hp6-eX-Bsi"/>
+                            <constraint firstItem="6mg-uw-tPi" firstAttribute="top" secondItem="wHC-Mr-C1X" secondAttribute="bottom" constant="40" id="M1u-BN-CcJ"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="pauseIcon" destination="LhR-uO-0xi" id="0wd-rz-81v"/>
+                        <outlet property="playIcon" destination="D4g-rs-Fht" id="oiw-2r-T4P"/>
+                        <outlet property="sliderValue" destination="dyY-ia-m60" id="L5a-I1-uRy"/>
+                        <outlet property="stopIcon" destination="dM8-lV-Gk2" id="Goe-VU-FbO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="293.5" y="-259.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sample.png" width="802" height="614"/>
+    </resources>
+</document>
